@@ -4,7 +4,7 @@
 
 **A plug-and-play library that lets agents call MCP and UTCP tools through TypeScript code - in just 3 lines.**
 
-LLMs are far better at writing code than managing complex tool calls. Instead of exposing hundreds of tools directly to the model, Code Mode gives it a single tool. The model writes TypeScript/JavaScript that calls your MCP or UTCP tools via HTTP, enabling scalable, context-efficient orchestration.`execute_code`
+LLMs are far better at writing code than managing complex tool calls. Instead of exposing hundreds of tools directly to the model, Code Mode gives it a single tool `execute_code`. The model writes TypeScript/JavaScript that calls your MCP or UTCP tools via HTTP, enabling scalable, context-efficient orchestration. 
 
 ## 🚀 Features
 
