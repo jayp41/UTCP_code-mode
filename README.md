@@ -2,18 +2,62 @@
 
 [![npm](https://img.shields.io/npm/v/@utcp/code-mode)](https://www.npmjs.com/package/@utcp/code-mode)
 
-A plug-and-play library to enable agents to call MCP and UTCP tools via typescript code execution in 3 lines of code.
+**A plug-and-play library that lets agents call MCP and UTCP tools through TypeScript code - in just 3 lines.**
 
-## Features
+LLMs are far better at writing code than managing complex tool calls. Instead of exposing hundreds of tools directly to the model, Code Mode gives it a single tool. The model writes TypeScript/JavaScript that calls your MCP or UTCP tools via HTTP, enabling scalable, context-efficient orchestration.`execute_code`
 
-- **TypeScript Code Execution**: Execute TypeScript code snippets with full access to registered tools
-- **Hierarchical Tool Access**: Tools organized by manual namespace (e.g., `math_tools.add()`)
-- **Hierarchical Type Definitions**: TypeScript interfaces organized in namespaces matching tool structure
-- **Runtime Interface Access**: Access TypeScript interfaces at runtime for introspection
-- **Type Safety**: Generates proper TypeScript interfaces for all tool inputs and outputs
-- **Secure Execution**: Uses Node.js VM module for safe code execution with timeout support
-- **Chain Tool Calls**: Combine multiple tool calls in a single TypeScript code block
+## 🚀 Features
 
+- **TypeScript Code Execution** – Run TypeScript with full access to registered MCP/UTCP tools
+- **Hierarchical Tool Access** – Tools organized by namespace (e.g. `math_tools.add()`)
+- **Auto-Generated Type Definitions** – Type-safe interfaces for tool inputs and outputs
+- **Runtime Interface Access** – Introspect TypeScript interfaces at runtime
+- **Secure Execution** – Node.js VM sandbox with timeout and resource limits
+- **Composable Calls – Chain** multiple tool calls within a single TypeScript code block
+
+## 🧠 Why Code Mode
+
+### The problem
+
+Direct tool calling doesn't scale:
+
+- Each tool definition consumes context tokens
+- Every intermediate result passes through the model
+
+Connecting many MCP servers quickly overloads the context window and increases latency and cost.
+
+### The approach
+
+Code Mode flips this model:
+
+1. The LLM gets a single tool: **`execute_code`**
+2. It writes JS/TS that calls your MCP pr UTCP endpoints 
+3. A lightweight HTTP proxy forwards requests 
+4. Results flow back through the execution environment
+
+This leverages what LLMs excel at - **writing code** - while keeping tool orchestration efficient and stateless.
+
+## 📦 Benefits
+
+### 🧭 Progressive Disclosure
+
+Tools can be explored like files on a filesystem — loaded only when needed.  Agents can also search for tools dynamically () to keep context lean.`search_tools`
+
+### 💾 Context Efficiency
+
+Large datasets can be filtered, joined, or aggregated *in code* before returning results, saving thousands of tokens.
+
+### 🔁 Smarter Control Flow
+
+Loops, conditionals, and error handling happen naturally in code - not through multiple tool calls.
+
+### 🔒 Privacy & Security
+
+Intermediate results stay within the sandbox; sensitive data can be tokenized automatically before reaching the model.
+
+### 🧱 State & Skills
+
+Agents can persist data or reusable functions (), gradually building their own "skills" over time.`./skills/*.ts`
 ## Installation
 
 ```bash
