@@ -9,13 +9,13 @@
 
 ## Why This Changes Everything
 
+LLMs excel at writing code but struggle with tool calls. Instead of exposing hundreds of tools directly, give them ONE tool that executes TypeScript code with access to your entire toolkit.
+
 **Research from [Apple](https://machinelearning.apple.com/research/codeact), [Cloudflare](https://blog.cloudflare.com/code-mode/) and [Anthropic](https://www.anthropic.com/engineering/code-execution-with-mcp) proves:**
 - **60% faster execution** than traditional tool calling
 - **68% fewer tokens** consumed  
 - **88% fewer API round trips**
 - **98.7% reduction in context overhead** for complex workflows
-
-**The insight:** LLMs excel at writing code but struggle with tool calls. Instead of exposing hundreds of tools directly, give them ONE tool that executes TypeScript code with access to your entire toolkit.
 
 ## Comprehensive Benchmarks
 
