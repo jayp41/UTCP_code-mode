@@ -131,7 +131,7 @@ npm install @utcp/code-mode
 }
 ```
 
-**That's it!** No installation, no Node.js knowledge required. The [Code Mode MCP Server](https://github.com/universal-tool-calling-protocol/code-mode/tree/main/code-mode-mcp) automatically:
+**That's it!** No installation, no Node.js knowledge required. The [UTCP-MCP Bridge](https://github.com/universal-tool-calling-protocol/utcp-mcp) automatically:
 - Downloads and runs the latest version via `npx`
 - Loads your tool configurations from JSON
 - Provides code execution capabilities to Claude Desktop
